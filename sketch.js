@@ -31,7 +31,7 @@ function draw() {
     // ---------------------------- Update section ----------------------------
     frames++;
     framesGone++;
-    circleRadius = max(sin(abs(framesGone / 20)) * 30, 30);
+    circleRadius = sin(abs(framesGone / 20)) * 30;
     if (frames > timeBetweenCircles * 60) {
         circles.push(new Circle(0, {
             red: 159,
