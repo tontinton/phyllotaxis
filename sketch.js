@@ -3,12 +3,12 @@ function Circle(angle, color) {
     this.angle = angle;
     this.color = color;
     this.r = 0;
-    this.speed = 0.2;
+    this.speed = 0.3;
     this.size = 10;
 }
 
 const angleSpeed = 0.075;
-const acceleration = 0.05;
+const acceleration = 0.03;
 const timeBetweenCircles = 0.1;
 let circleRadius = 20;
 var circles = [];
@@ -31,7 +31,7 @@ function draw() {
     // ---------------------------- Update section ----------------------------
     frames++;
     framesGone++;
-    circleRadius = sin(abs(framesGone / 20)) * 30;
+    circleRadius = sin(abs(framesGone / 12)) * 40;
     if (frames > timeBetweenCircles * 60) {
         circles.push(new Circle(0, {
             red: 159,
@@ -60,9 +60,7 @@ function draw() {
         let x = cos(c.angle) * c.r;
         let y = sin(c.angle) * c.r;
         if (x - circleRadius / 2 > width / 2 ||
-            x + circleRadius / 2 < -width / 2 ||
-            y - circleRadius / 2 > height / 2 ||
-            y + circleRadius / 2 < -height / 2) {
+            x + circleRadius / 2 < -width / 2) {
             circles.splice(i, 1);
         } else {
             fill(c.color.red, c.color.green, c.color.blue);
