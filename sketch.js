@@ -4,28 +4,27 @@ function Circle(angle, color) {
     this.color = color;
     this.r = 0;
     this.speed = 0.3;
-    this.size = 10;
 }
 
 const angleSpeed = 0.075;
 const acceleration = 0.03;
 const timeBetweenCircles = 0.1;
 let circleRadius = 20;
-var circles = [];
-var frames = 0;
-var framesGone = 0;
+let circles = [];
+let frames = 0;
+let framesGone = 0;
 
 function setup() {
     createCanvas(1920, 1080);
-    translate(width / 2, height / 2);
+    translate(width / 2, height / 2); // Center of the screen is now x = 0, y = 0
 }
 
 function draw() {
     // ---------------------------- Canvas section ----------------------------
-    background(51);
-    noStroke();
+    background(51); // rgb(51, 51, 51)
+    noStroke(); // No outline for the ellipses
     fill(255, 0, 100); // rgb(255, 0, 100)
-    textSize(32);
+    textSize(24);
     text("Phyllotaxis, Made by Tony Solomonik \nF11 for full screen!", -width / 2 + width / 150, -height / 2 + height / 30);
 
     // ---------------------------- Update section ----------------------------
